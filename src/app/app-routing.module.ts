@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthenticationService } from './authentication.service';
+import { AnotherPage } from './another/another.page';
+import { ThirdPage } from './third-page/third-page.page';
 
 const routes: Routes = [
   {
@@ -12,13 +15,15 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'my-custom',
-    loadChildren: () => import('./my-custom/my-custom.module').then( m => m.MyCustomPageModule)
+    path: 'another-page',
+    component: AnotherPage,
+    canActivate:[AuthenticationService]
   },
   {
-    path: 'my-custom',
-    loadChildren: () => import('./my-custom/my-custom.module').then( m => m.MyCustomPageModule)
-  },
+    path: 'third-page',
+    component: ThirdPage,
+    canActivate:[AuthenticationService]   
+  }
 ];
 
 @NgModule({

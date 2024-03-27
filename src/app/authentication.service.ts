@@ -4,10 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  authenticate = false;
+
   constructor() { }
 
-  canActivate(){
-    return this.authenticate
-  }
+  
 }

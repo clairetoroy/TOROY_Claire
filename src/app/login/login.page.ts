@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
   isToastOpen: boolean = false;
   isValid: boolean = false;
   accounts: any[] =[
-    {user: "admin", pw: "admin"}, {user: "user1", pw: "user1"}
+    {user: "admin", pw: "admin"}, {user: "user1", pw: "user1"}, {user: "admin", pw: "password"}
   ]
   constructor(private route : Router, private alertControl : AlertController, private toastControl : ToastController) { }
 
